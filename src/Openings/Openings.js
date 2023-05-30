@@ -1,20 +1,11 @@
 //creator: perry stendal og jørgen tinnesand combinert, brukt chatGpt for å feilsøke
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import "./style.css";
-import OpeningsContext from '../Practice/OpeningContext';
 
 
-const Openings = () => {
-  const [opening, setOpening] = useState({
-    name: "",
-    moves: "",
-    description: "",
-  });
+
+
   
 
-  const token = localStorage.getItem("token");
-  const [dataChanged, setDataChanged] = useState(false);
+  
 
  //perry stendal lagde valideringen, resten av koden endre vi med å bruke for det meste jørgen sin kode, prøvde å løse problemet samtidig.
  // her brukte jeg en kombinasjon av meg selv, emne stoffet og chat gpt for å komme fram til slutt produktet.
