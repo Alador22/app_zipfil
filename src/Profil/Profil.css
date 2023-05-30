@@ -1,0 +1,60 @@
+.Profilside-body {
+    /*Bakgrunn på profilsiden*/
+    background: linear-gradient(to bottom, #547263, #020305);
+    background-size: cover;
+    height: 100vh;
+    padding-top: 150px;
+  }
+
+  /* Container for hele siden */
+  .profil-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+  }
+
+  /*stil for overskrift*/
+  .profil-container h1 {
+    color: #fff;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  /* stil for inputfelt*/
+  .profil-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    border: none;
+  }
+
+  /* stil for knapper*/
+  .profil-container button {
+    padding: 10px 20px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    background: #547263;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  /*Hover-effekt for knapper*/
+  .profil-container button:hover {
+    background: #020305;
+  }
+  
+  .error-message {
+    color: red;
+    font-weight: bold;
+}
