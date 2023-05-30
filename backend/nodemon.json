@@ -1,0 +1,9 @@
+{
+  "env": {
+    "DB_USER": "alador",
+    "DB_PASSWORD": "killer431",
+    "DB_NAME": "database",
+    "REFRESH_TOKEN_SECRET": "d66d1aa78acb995f09aa42283008f54beebb5b2ea6334433341360d5586ea04afe5be5762b0e1f1ca7a8cf95d15ad293efcb2c3537e4056d5f2f0808e043a428",
+    "ACCESS_TOKEN_SECRET": "d4eb44ab871dfb61c69c062c26bd802aff7c793de0adaa463071abc8b978b0c0f21c73be7fc5806156591f4ab7257221c34a072d85ba2b966b83ebfde76a49e2"
+  }
+}
