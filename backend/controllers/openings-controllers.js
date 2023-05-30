@@ -110,7 +110,7 @@ const updateOpening = async (req, res, next) => {
     );
     return next(error);
   }
-  //
+  // de tre linjene nedenfor ble laget av chatgpt
   opening.name = name;
   opening.moves = moves;
   opening.description = description;
