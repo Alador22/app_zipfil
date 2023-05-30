@@ -4,7 +4,9 @@
 
 
   
-
+// Jørgen, lagde alle 3 knappene, brukte generell event handler, også for å koble den opp
+// Mot databasen så brukte jeg hjelp med ChatGPT for å finne en enkel løsning, siden
+// FrontEnd og BackEnd var laget litt forskjellige
   
 
  //perry stendal lagde valideringen, resten av koden endre vi med å bruke for det meste jørgen sin kode, prøvde å løse problemet samtidig.
@@ -27,7 +29,8 @@
 
  
 
-
+ // Jørgen og Perry, her så sjekker vi at selve åpningen er skrevet riktig
+ // Også sender vi den inn til databasen
   const handleButtonClick = async () => {
     const errorMessage = validateMoves(opening.moves);
     if(errorMessage) {
@@ -53,7 +56,7 @@
       console.error("Error fikk ikke lagret:", error);
     }
   };
-  
+  // Jørgen, denne oppdaterer åpningen som er valgt
   const patchOpenings = async () => {
     try {
       const response = await axios.patch(
@@ -67,7 +70,7 @@
         }
       );
   
-      // Reset the opening state to its initial state
+      
       setOpening({
         name: "",
         moves: "",
@@ -81,7 +84,7 @@
   
 
   const [openings, setOpenings] = useState([]);
-
+// Jørgen, Henter alle åpningene som er tilknyttet brukeren
   const fetchOpenings = async () => {
     try {
       const response = await axios.get(
@@ -106,14 +109,14 @@
     }
   };
   const [selectedOpeningId, setSelectedOpeningId] = useState(null);
-
+  // Her så legger du inn Id'en fra backend inn i en variabel som kan brukes på frontend
   const handleOpeningClick = (opening) => {
     if (opening._id !== selectedOpeningId) {
       setSelectedOpeningId(opening._id);
       console.log(opening._id);
     }
   };
-
+ // Jørgen, Her så laget jeg en lambda funksjon som sletter en åpning så lenge du har klikket på den
   const deleteOpening = async () => {
     const confirmDelete = window.confirm("Sikker på at du vil slette åpeningen, det er umulig å få den tilbake");
   
@@ -129,8 +132,7 @@
           }
         );
   
-        // You might want to remove the deleted opening from your state here
-        // so it disappears from the UI without needing to refresh the page
+        
         setOpenings(openings.filter(opening => opening._id !== selectedOpeningId));
   
         console.log("Sletting gjennomført:", response);
@@ -139,7 +141,7 @@
         console.error("Error during deletion:", error);
       }
     } else {
-      // User clicked Cancel, do nothing
+      
       console.log("Sletting kanselert.");
     }
   };
@@ -147,7 +149,10 @@
   useEffect(() => {
     fetchOpenings();
   }, [dataChanged]);
+// Jørgen, Her viser jeg frem knapper som skal lagre, hente, endre og slette åpninger.
 
+// Den viser også frem statisk de åpningene du har og aktivt endrer seg når du legger til
+// Eller når du oppdaterer, sletter åpning
   return (
     <OpeningsContext.Provider value={openings}>
     <div className="Profilside-body">

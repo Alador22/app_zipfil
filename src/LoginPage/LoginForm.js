@@ -37,6 +37,8 @@ const LoginForm = ({ onLogin }) => {
           },
         }
       );
+      // Jørgen, Her så blir det lagret en JWT i lokal fil som da kan brukes på resten
+      // Av nettsiden
       console.log(response.data);
       const token = response.data.token;
       localStorage.setItem("token", token);

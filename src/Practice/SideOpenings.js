@@ -17,8 +17,8 @@ const openings = [
 const SideOpenings = ({ chess, setPosition, addMoveToList, showOpenings }) => {
   const [customOpenings, setCustomOpenings] = useState([]);
   const token = localStorage.getItem("token");
-  //const decodedToken = jwtDecode(token); // Assuming the token is stored in the context
-// UseEffect laget av Jørgen + ChatBot for troubleshooting
+  //const decodedToken = jwtDecode(token);
+// UseEffect laget av Jørgen + ChatBot for  å søke etter feil
   useEffect(() => {
     const fetchOpenings = async () => {
       try {
@@ -41,7 +41,6 @@ const SideOpenings = ({ chess, setPosition, addMoveToList, showOpenings }) => {
         });
         setCustomOpenings(allOpenings);
   
-        // Log the value of customOpenings
         console.log(customOpenings);
       } catch (error) {
         console.error('Failed to fetch openings:', error);
@@ -49,9 +48,9 @@ const SideOpenings = ({ chess, setPosition, addMoveToList, showOpenings }) => {
     };
   
     fetchOpenings();
-  }, [token]); // Dependency array, fetchOpenings will be called whenever token changes
+  }, [token]); 
 
-  // Combine hardcoded openings with custom openings
+  // Jørgen og Torjus, legger inn både Default åpninger og Egenlagde åpninger
   const allOpenings = [...openings, ...customOpenings];
   // Funskjon for å bruke en sjakkåpning
   const applyOpening = (moves) => {

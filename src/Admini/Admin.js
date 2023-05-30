@@ -3,7 +3,9 @@
   
      
 
-  
+  // Jørgen, laget en kort og grei side hvor det er 2 knapper 1 som skal gi Admin rettigheter
+  // og en som skal slette konto.
+  // Brukte ChatBot til å generere EventHandlers derfor er de ikke med.
 
   return (
     <div className="Profilside-body">
